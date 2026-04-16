@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #fcf5e9;
+  --container-normal: 1100px;
+  --container-wide: 1400px;
+  --container-small: 900px;
+  --dark-color: #333;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+image {
+  max-width: 100%;
+}
+
+/* utility classes */
+.bg-primary {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
+
+.bg-dark {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.bg-dark .bg-primary {
+  padding: 0 0.3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: solid 1px var(--dark-color);
+  background: transparent;
+  &:hover {
+    background-color: var(--dark-color);
+    color: #fff;
+  }
+}
+
+.section-heading {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* containers */
+.container {
+  max-width: var(--container-normal);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-lg {
+  max-width: var(--container-wide);
+}
+
+.container-sm {
+  max-width: var(--container-small);
+}
+
+/* header */
+.header .logo {
+  width: 130px;
+}
+
+.header .header-flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem auto;
+  align-items: center;
+  .main-menu {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.header .main-menu a {
+  padding: 0.5rem 1rem;
+  &:hover {
+    background-color: var(--primary-color);
+  }
+}
+
+.header .main-menu .current {
+  background-color: var(--primary-color);
+  font-weight: 600;
+}
+
+.hero {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h2 {
+    font-size: 3rem;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+}
+
+.gallery-flex {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-item {
+  width: calc(33% - 20px);
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.5);
+  border-radius: 8px;
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    border-radius: 8px;
+  }
+}
+/* footer */
+.footer {
+  border-top: solid #333 1px;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+  img {
+    width: 120px;
+    height: auto;
+  }
+  h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  a {
+    margin: 0.2rem;
+  }
+}
+
+.footer .footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* services */
+.services {
+  padding: 3rem 0 4rem;
+}
+
+.services-flex {
+  display: flex;
+  gap: 2rem;
+}
+.services-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+.team {
+  padding: 3rem 0 4rem;
+  h2 {
+    margin-bottom: 1.3rem;
+  }
+}
+
+.team-flex {
+  display: flex;
+  gap: 1.4rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* contact */
+.contact {
+  padding: 3rem 0 4rem;
+  p {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  input,
+  textarea {
+    border: none;
+    border-bottom: solid 1px var(--dark-color);
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    padding-bottom: 1.3rem;
+    &:focus {
+      outline: 0;
+    }
+  }
+  textarea {
+    height: 200px;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+.form.group {
+  margin: 2rem 0;
+}
+
+/* media */
+@media (max-width: 768px) {
+  .header .header-flex,
+  .footer .footer-flex,
+  .services .services-flex,
+  .team .team-flex {
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+  .hero {
+    height: 300px;
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+  .gallery-item {
+    width: calc(50% - 20px);
+  }
+  .footer .footer-flex {
+    text-align: center;
+  }
+}
